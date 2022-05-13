@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("./images/smart\ watch1.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 600px;
+        }
+        
+        #stopwatch {
+            /* text-align: center; */
+            margin-top: -400px;
+            color: black;
+            /* margin-left: 180px; */
+            font-size: 30px;
+        }
+        
+        #buttons {
+            margin-left: 500px;
+            margin-top: -300px;
+        }
+        
+        #icon {
+            /* margin-left: 730px; */
+            margin-top: -100px;
+            /* color: white; */
+        }
+        
+        #i1 {
+            color: black;
+        }
+        /* #i2 {
+            margin-left: 20px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-4">
+                <div id="stopwatch">
+                    00:00:00
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="buttons">
+                <div class="col-sm-5"></div>
+
+                <button onclick="startTimer()"><i id="i0" class="fa fa-play" aria-hidden="true"></i></button>
+                <button onclick="stopTimer()"><i id="i2" class="fa fa-stop-circle-o" aria-hidden="true"></i></button>
+
+
+                <button onclick="resetTimer()"><i id="i3" class="fa fa-refresh" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+        <div class="row" id="icon">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">
+                <a href="sample.html"><i id="i1" class="fa fa-home" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="message.html"> <i id="i1" class="fa fa-commenting-o" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="music.html"><i id="i1" class="fa fa-music" aria-hidden="true"></i></p></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="start.html"><i id="i1" class="fa fa-stop-circle-o" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const timer = document.getElementById('stopwatch');
+
+        var hr = 0;
+        var min = 0;
+        var sec = 0;
+        var stoptime = true;
+
+        function startTimer() {
+            if (stoptime == true) {
+                stoptime = false;
+                timerCycle();
+            }
+        }
+
+        function stopTimer() {
+            if (stoptime == false) {
+                stoptime = true;
+            }
+        }
+
+        function timerCycle() {
+            if (stoptime == false) {
+                sec = parseInt(sec);
+                min = parseInt(min);
+                hr = parseInt(hr);
+
+                sec = sec + 1;
+
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+                if (min == 60) {
+                    hr = hr + 1;
+                    min = 0;
+                    sec = 0;
+                }
+
+                if (sec < 10 || sec == 0) {
+                    sec = '0' + sec;
+                }
+                if (min < 10 || min == 0) {
+                    min = '0' + min;
+                }
+                if (hr < 10 || hr == 0) {
+                    hr = '0' + hr;
+                }
+
+                timer.innerHTML = hr + ':' + min + ':' + sec;
+
+                setTimeout("timerCycle()", 1000);
+            }
+        }
+
+
+        function resetTimer() {
+            timer.innerHTML = "00:00:00";
+            stoptime = true;
+            hr = 0;
+            sec = 0;
+            min = 0;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

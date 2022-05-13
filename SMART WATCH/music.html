@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-image: url("./images/smart\ watch1.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 600px;
+    }
+    
+    #icon {
+        /* margin-left: 730px; */
+        /* color: white; */
+    }
+    
+    #i1 {
+        color: black;
+        margin-top: 90px;
+    }
+    /* h5 {
+        color: white;
+        text-align: center;
+        margin-top: -650px;
+        margin-left: 150px;
+    } */
+    
+    #d1 {
+        /* margin-left: 800px; */
+        color: white;
+        margin-top: -200px;
+    }
+    
+    #img1 {
+        width: 150px;
+        height: 150px;
+        /* margin-left: 770px; */
+        margin-top: -800px;
+    }
+    
+    #img2 {
+        width: 150px;
+        height: 152px;
+        margin-top: -338px;
+        /* margin-left: 770px; */
+    }
+    
+    #pause {
+        margin-left: 20px;
+    }
+    
+    #next {
+        margin-left: 20px;
+    }
+    
+    li {
+        list-style-type: none;
+    }
+    
+    #demo {
+        /* text-align: center; */
+        margin-top: -300px;
+        /* margin-left: 800px; */
+        color: black;
+        margin-left: 25px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-4"><img src="./images/music.jpg" id="img1"></div>
+            <div class="col-sm-4"> <audio src="" id="a1"></audio></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h4 id="demo"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="d1">
+            <div class="row">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-sm-2"> <button id="play" onclick="previous()"><i class="fa fa-step-backward fa-2x"></i></button></div>
+                        <div class="col-sm-2"> <button id="pause" onclick="setmusic()" class="fa fa-play"></button></div>
+                        <div class="col-sm-2"> <button id="next" onclick="nextsong()"><i class="fa fa-step-forward fa-2x"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row" id="icon">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-1">
+                <a href="sample.html"><i id="i1" class="fa fa-home" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="message.html"> <i id="i1" class="fa fa-commenting-o" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="music.html"><i id="i1" class="fa fa-music" aria-hidden="true"></i></p></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="start.html"><i id="i1" class="fa fa-stop-circle-o" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // var p = document.getElementById("img")
+        // var h = document.getElementById("a1")
+        // var c = ""
+        var i = 0;
+        // var isPlaying = false
+
+
+
+
+        function setmusic() {
+            var a = document.getElementById("a1")
+                // var b = document.getElementById("demo")
+            var c = document.getElementById("img1")
+            var d = document.getElementById("pause")
+            var e = ""
+
+
+            // if (!isPlaying) playTrack();
+            // else pauseTrack();
+
+
+            // function playTrack() {
+
+            //     a.play();
+            //     isPlaying = true;
+
+
+            //     pause.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+            // }
+
+            // function pauseTrack() {
+            //     isPlaying = false;
+
+            //     a.pause();
+
+
+            //     pause.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+
+            // }
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    var respo = JSON.parse(this.responseText)
+                    var r = respo.music
+                    console.log(r)
+                    a.src = r[i].path
+                    c.src = r[i].image
+
+                    console.log(r[i].path)
+                    if (d.className == "fa fa-play") {
+                        a.play()
+                        d.className = "fa fa-pause"
+                    } else {
+                        a.pause()
+                        d.className = "fa fa-play"
+                    }
+                    e = "<li>" + r[i].name + "</li>"
+                    document.getElementById("demo").innerHTML = e
+
+                }
+            }
+            xhttp.open("GET", "music.json", true);
+            xhttp.send()
+
+        }
+
+        function nextsong() {
+            i++;
+            setmusic()
+
+
+        }
+
+        function previous() {
+            i--;
+            setmusic();
+        }
+    </script>
+</body>
+
+</html>

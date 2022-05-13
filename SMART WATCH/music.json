@@ -1,0 +1,17 @@
+{
+    "music": [{
+            "name": "Music1",
+            "path": "music/song 1.mp3",
+            "artist": "artist 1",
+            "image": "images/music1.jpg"
+
+        },
+        {
+            "name": "Music2",
+            "path": "music/song 2.mp3",
+            "artist": "artist 2",
+            "image": "images/music1.jpg"
+
+        }
+    ]
+}

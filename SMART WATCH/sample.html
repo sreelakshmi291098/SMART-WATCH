@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="smart.js"></script>
+</head>
+
+<body onload="inclock()">
+
+
+
+
+    <div class="container">
+        <div class="datetime">
+            <div class="date">
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-4" id="dayname" style="color:red ;">Day</div>
+                            <div class="col-sm-3" id="month" style="color:red ;">Month</div>
+                            <div class="col-sm-2" id="daynum" style="color:red ;">00</div>
+                            <div class="col-sm-3" id="year" style="color:red ;">Year</div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-4"></div>
+
+
+                </div><br>
+            </div>
+            <div class="time">
+                <div class="row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-1" id="hour" style="color:red ;">00</div>:
+                    <div class="col-sm-1" id="minutes" style="color:red ;">00</div>:
+                    <div class="col-sm-1" id="seconds" style="color:red ;">00</div>:
+                    <div class="col-sm-1" id="period" style="color:red ;">AM</div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="icon">
+            <div class="col-sm-7"></div>
+            <div class="col-sm-1">
+                <a href="message.html"> <i id="i1" class="fa fa-commenting-o" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="music.html"><i id="i1" class="fa fa-music" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-sm-1">
+                <a href="start.html"><i id="i1" class="fa fa-stop-circle-o" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
